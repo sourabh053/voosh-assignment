@@ -58,14 +58,14 @@ function TodoList() {
         Create Task
       </Button>
       {allTasks.map((task,index) => (
-        <div key={index} className="allTasks-cont" onClick={handleDelete}>
+        <div key={task.title} className="allTasks-cont" onClick={handleDelete}>
           <div>
             <h4>{task.title}</h4>
             <p>{task.subtaskone}
             <Checkbox />
             </p>
             <p>{task.subtasktwo}
-            <Checkbox  />
+            <Checkbox />
             </p>
             <p>{task.subtaskthree}
             <Checkbox  />

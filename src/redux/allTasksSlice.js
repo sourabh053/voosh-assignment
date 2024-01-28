@@ -7,7 +7,9 @@ const allTasksSlice = createSlice({
     },
     reducers: {
         SetallTask : (state, action) => {
-            state.allTasks.push(action.payload);
+            const isCreated = state.allTasks.find((task)=>(task.title === action.payload.title));
+            if(isCreated === undefined) state.allTasks.push(action.payload)
+            else alert("same task already exist");
         },
         DeleteTask : (state, action) => {
             if(state.allTasks.length === 1) state.allTasks = [];
